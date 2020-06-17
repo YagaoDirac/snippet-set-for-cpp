@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>operator overloading postfix increment or decrement</Title>
+      <Shortcut>operator~plusplus~minusminus</Shortcut>
+      <Description>The int parameter keeps 0 in any case.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type name</ID>
+          <Default>typename</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[$type name$& operator++();//prefix ++, unary
+      $type name$& operator++(int);//postfix ++, binary
+      $type name$& operator--();//prefix --, unary
+      $type name$& operator--(int);//postfix --, binary
+      
+      //move this implementing to .cpp file.
+      $type name$& $type name$::operator++()
+      {
+      cout<<"operator overloading function not editted yet."<<endl;
+      return *this;
+      }
+      $type name$& $type name$::operator++(int const_int_0)
+      {
+      cout<<"operator overloading function not editted yet."<<endl;
+      return *this;
+      }
+      $type name$& $type name$::operator--()
+      {
+      cout<<"operator overloading function not editted yet."<<endl;
+      return *this;
+      }
+      $type name$& $type name$::operator--(int const_int_0)
+      {
+      cout<<"operator overloading function not editted yet."<<endl;
+      return *this;
+      }
+      $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
