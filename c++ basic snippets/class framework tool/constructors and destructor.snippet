@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>all the constructors and destructor.</Title>
+      <Shortcut>ctor~and~dtor</Shortcut>
+      <Description>Not very sure if I still dropped something.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>class name</ID>
+          <Default>typename</Default>
+        </Literal>
+        <!--<Literal>
+          <ID>with initialization</ID>
+          <Default>: const member { init code }</Default>
+          <ToolTip>especially for const dasta members</ToolTip>
+        </Literal>-->
+        <Literal>
+          <ID>return reference or normal value</ID>
+          <Default>reference symbol or nothing</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[$class name$();
+      $class name$(const $class name$&);
+      $class name$($class name$&&);
+      $class name$$return reference or normal value$ operator=(const $class name$&);
+      $class name$$return reference or normal value$ operator=($class name$&&);
+      virtual ~$class name$();
+      
+      $end$
+      //move this part to .cpp file.
+      //for const member, init them as typename::typename():const member name1{init code}const member name2{init code}{function body here}
+      $class name$::$class name$(){};
+      $class name$::$class name$(const $class name$&){};
+      $class name$::$class name$($class name$&&){};
+      $class name$$return reference or normal value$ $class name$::operator=(const $class name$&){return *this;};
+      $class name$$return reference or normal value$ $class name$::operator=($class name$&&){return *this;};
+      $class name$::~$class name$(){};//not very sure whether this one has to be virtual.
+      
+      
+      ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

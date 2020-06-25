@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>string declaration in header files.</Title>
+      <Shortcut>string~in~header~files</Shortcut>
+      <Description>Automatically adds all the "prefix" stuff for you. Notice only the 'string' in the last line after using keyword doesn't have its namespace prefix std::. Or else it's a C 2059.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <!--<Declarations>
+        <Literal>
+          <ID>my type</ID>
+          <Default>T</Default>
+        </Literal>
+      </Declarations>-->
+      <Code Language="cpp">
+        <![CDATA[template<class _Elem>
+struct std::char_traits;
+template<class _Ty>
+class std::allocator;
+template<class _Elem,
+	class _Traits = std::char_traits<_Elem>,
+	class _Alloc = std::allocator<_Elem>>
+class std::basic_string;
+using string = std::basic_string<char, std::char_traits<char>, std::allocator<char>>;
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>global variable</Title>
+      <Shortcut>extern~for~global~variable</Shortcut>
+      <Description>Avoid global variable as possible.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>variable type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>variable name</ID>
+          <Default>variable</Default>
+        </Literal>
+        <Literal>
+          <ID>init code</ID>
+          <Default>initialization code</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[//.h
+      extern $variable type$ $variable name$;
+      
+      //.cpp
+      $variable type$ $variable name${$init code$};
+      $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
