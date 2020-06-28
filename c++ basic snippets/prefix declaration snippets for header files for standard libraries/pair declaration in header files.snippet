@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>pair declaration in header files.</Title>
+      <Shortcut>pair~in~header~files</Shortcut>
+      <Description>Automatically adds all the "prefix" stuff for you.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <!--<Declarations>
+        <Literal>
+          <ID>my type</ID>
+          <Default>T</Default>
+        </Literal>
+      </Declarations>-->
+      <Code Language="cpp">
+        <![CDATA[template<class _Ty1,
+	class _Ty2>
+struct std::pair;
+
+//move this line to .cpp file. Put it before custom header files.
+#include<utility>
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

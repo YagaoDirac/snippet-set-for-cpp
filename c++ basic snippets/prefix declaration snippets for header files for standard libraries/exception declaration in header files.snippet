@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>exception declaration in header files.</Title>
+      <Shortcut>exception~in~header~files</Shortcut>
+      <Description>Automatically adds all the "prefix" stuff for you. Exception class is the base class of all.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <!--<Declarations>
+        <Literal>
+          <ID>my type</ID>
+          <Default>T</Default>
+        </Literal>
+      </Declarations>-->
+      <Code Language="cpp">
+        <![CDATA[//snippet for all the exceptions in std. Uncomment only those needed.
+class std::exception;
+//class std::bad_exception;//inherit from exception
+//class std::bad_alloc;//inherit from exception
+//class std::bad_array_new_length;//inherit from bad_alloc
+
+////move #include directive to .cpp file. Put it before custom header files.
+#include<vcruntime_exception.h>
+
+
+////in 2000ish, this type was named logic_failure for some reason.
+////inherit from exception
+//class std::logic_error;
+////inherit from logic_error, there are four.
+//class std::domain_error;
+//class invalid_argument;
+//class length_error;
+//class out_of_range;
+
+////inherit from exception
+//class runtime_error;
+////inherit from logic_error, there are three.
+//class overflow_error;
+//class underflow_error;
+//class range_error;
+
+////move #include directive to .cpp file. Put it before custom header files.
+////<vcruntime_exception.h> is already included in <stdexcept>.
+//#include<stdexcept>
+
+
+////both inherit from exception
+//class std::bad_cast;
+//class std::bad_typeid;
+
+////move #include directive to .cpp file. Put it before custom header files.
+////<vcruntime_exception.h> is already included in <typeinfo>.
+//#include<typeinfo>
+//end//snippet for all the exceptions in std. 
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
