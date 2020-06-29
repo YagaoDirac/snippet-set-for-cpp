@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>auto_ptr as return value for a function</Title>
+      <Shortcut>autoptr~as~return~value</Shortcut>
+      <Description>Never add a ref mark to it!</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>function name</ID>
+          <Default>function</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[std::auto_ptr<$type$>/*NO &*/ $function name$($end$)]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

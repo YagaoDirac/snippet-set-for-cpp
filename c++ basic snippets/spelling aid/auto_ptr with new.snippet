@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>safe way to init auto_ptr with keyword new</Title>
+      <Shortcut>autoptr~safe~init</Shortcut>
+      <Description>Only initializing an auto_ptr with the new directive is recommented.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>variable name</ID>
+          <Default>variable</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[std::auto_ptr<$type$> $variable name$(new $type$($end$));]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

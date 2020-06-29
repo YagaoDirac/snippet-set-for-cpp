@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Const auto_ptr ref as function param to prevent ownership transferring.</Title>
+      <Shortcut>const~autoptr~ref~as~function~param</Shortcut>
+      <Description>Preventing copy or ownership transferring. The keyword const has to appear in the left side.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>variable name</ID>
+          <Default>variable</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[const std::auto_ptr<$type$>& $end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
