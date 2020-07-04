@@ -2,8 +2,8 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>vector declaration in header files.</Title>
-      <Shortcut>vector~in~header~files</Shortcut>
+      <Title>map declaration in header files.</Title>
+      <Shortcut>map~in~header~files</Shortcut>
       <Description>Automatically adds all the "prefix" stuff for you.</Description>
       <Author>YagaoDirac</Author>
     </Header>
@@ -21,11 +21,14 @@
       <Code Language="cpp">
         <![CDATA[template<class _Ty>
 class std::allocator;
-template<class _Ty, class _Alloc = std::allocator<_Ty> >
-class std::vector;
+template<class _Kty,
+	class _Ty,
+	class _Pr = std::less<_Kty>,
+	class _Alloc = std::allocator<std::pair<const _Kty, _Ty> > >
+class map;
 $end$
 //move this line to .cpp file. Put it before custom header files.
-#include<vector>
+//#include<set>
 ]]></Code>
     </Snippet>
   </CodeSnippet>

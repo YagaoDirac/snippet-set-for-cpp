@@ -2,8 +2,8 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>vector declaration in header files.</Title>
-      <Shortcut>vector~in~header~files</Shortcut>
+      <Title>multimap declaration in header files.</Title>
+      <Shortcut>multimap~in~header~files</Shortcut>
       <Description>Automatically adds all the "prefix" stuff for you.</Description>
       <Author>YagaoDirac</Author>
     </Header>
@@ -19,14 +19,13 @@
         </Literal>
       </Declarations>-->
       <Code Language="cpp">
-        <![CDATA[template<class _Ty>
+        <![CDATA[xxxxxxxxx
+        
+        template<class _Ty>
 class std::allocator;
 template<class _Ty, class _Alloc = std::allocator<_Ty> >
 class std::vector;
-$end$
-//move this line to .cpp file. Put it before custom header files.
-#include<vector>
-]]></Code>
+$end$]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>

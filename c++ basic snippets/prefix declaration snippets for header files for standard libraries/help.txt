@@ -1,0 +1,21 @@
+Temporarily only Chinese lang. Planing to write English part very soon.
+
+在自定义头文件里面不要写include。只写前向声明（prefix declaration）。
+如果遇到
+template<class T, class U= allocator<T> >
+1,最后两个>中间一定要有空格。
+2，一定要在前面写上allocator的声明。
+结果就是
+template<class T>
+class allocator;
+template<class T, class U= allocator<T> >
+class vector;
+两个定义里面的T是没有对应关系的，只有自己里面的T才有对应关系。
+这种情况一直要追到模板参数里面不依赖其他的类。
+我的片段工具里面都有提供这些辅助，很方便的。
+
+如果是继承，就不用写，比如有一个类
+class a: class b;
+在写前向声明的时候，直接写
+class a;
+就完事了，不用写出任何的b的信息。
