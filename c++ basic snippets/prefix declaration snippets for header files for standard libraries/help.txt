@@ -19,3 +19,5 @@ class a: class b;
 在写前向声明的时候，直接写
 class a;
 就完事了，不用写出任何的b的信息。
+
+嵌套类,nested class，比如vector里面的iterator,只要引进来了vector，就自动可以使用iterator了，不用单独声明嵌套类。

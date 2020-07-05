@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>cout the type name</Title>
+      <Shortcut>type~cout</Shortcut>
+      <Description></Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>variable name</ID>
+          <Default>/*variable name here*/</Default>
+        </Literal>
+        <Literal>
+          <ID>line number or not start</ID>
+          <Default>/*</Default>
+        </Literal>
+        <Literal>
+          <ID>line number or not end</ID>
+          <Default>*/</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[std::cout <<"type of $variable name$  : "<< typeid($variable name$).name()$line number or not start$<<"   __LINE__"<<__LINE__ $line number or not end$<< std::endl;$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

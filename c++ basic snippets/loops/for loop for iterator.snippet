@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>for loop for iterator.</Title>
+      <Shortcut>for~iterator</Shortcut>
+      <Description>for loop series.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>namespace</ID>
+          <Default>std::</Default>
+        </Literal>
+        <Literal>
+          <ID>container type</ID>
+          <Default>vector</Default>
+        </Literal>
+        <Literal>
+          <ID>variable type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>const or not</ID>
+          <Default>const_</Default>
+        </Literal>
+        <Literal>
+          <ID>variable name</ID>
+          <Default>iter</Default>
+        </Literal>
+        <Literal>
+          <ID>container name</ID>
+          <Default>coll</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[for ($namespace$$container type$<$variable type$>::$const or not$iterator $variable name$ = $container name$.begin();$variable name$<$container name$.end();++$variable name$)
+	{
+		$end$
+	}
+      ]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
