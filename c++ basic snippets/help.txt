@@ -1,0 +1,40 @@
+Temporarily only Chinese lang. Planing to write English part very soon.
+
+在自定义头文件里面不要写include。只写前向声明（prefix declaration）。
+如果遇到
+template<class T, class U= allocator<T> >
+1,最后两个>中间一定要有空格。
+2，一定要在前面写上allocator的声明。
+结果就是
+template<class T>
+class allocator;
+template<class T, class U= allocator<T> >
+class vector;
+两个定义里面的T是没有对应关系的，只有自己里面的T才有对应关系。
+这种情况一直要追到模板参数里面不依赖其他的类。
+我的片段工具里面都有提供这些辅助，很方便的。
+
+如果是继承，就不用写，比如有一个类
+class a: class b;
+在写前向声明的时候，直接写
+class a;
+就完事了，不用写出任何的b的信息。
+
+嵌套类,nested class，比如vector里面的iterator,只要引进来了vector，就自动可以使用iterator了，不用单独声明嵌套类。
+
+
+
+
+
+
+针对stl的算法那一块，有非常多的算法是有特化的，所以如果在头文件里面的那个版本，不是所使用的特化版本，就会出错。解决方法是，随便去cppreference或者cplusplus，任何一个网站，找到所使用的算法，一般是std::直接写那个函数的名字，比如std::min，就能找到。进入以后，在网页上找到定义这个函数的头文件，随便复制一个示例代码到你正在写的代码里面，在cpp里面直接include，把函数的调用改成你的数据类型对应的版本（其实就改参数就够了，类型会自动匹配）然后就可以从调用函数的地方，右键，转到定义，就可以找到。把整个函数头全部复制，放到需要用这个函数的头文件里面，就是一个ok的前向声明了。这样就实现了在头文件里面不include任何东西，但是又可以用任何东西，至少是算法这一块，应该是通用办法。这个流程里面，我唯一无法完全说清楚的地方就是，如何根据网上找到的示例代码来改成自己要用的代码，比如网上是用int，但是需要的是vector的版本，这个时候就需要点经验了。这个代码片段集大概是解决不了这个问题了。
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>std::min for .h</Title>
+      <Shortcut>std~min~for~header</Shortcut>
+      <Description>Might not work on compilers other than visual studio. Find the example code on cppreference.org or cplusplus.org, turn to definition, paste all the function head to your header file.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <!--<Literal>
+          <ID>function name</ID>
+          <Default>function</Default>
+        </Literal>-->
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[template<class _Ty>
+_Post_equal_to_(_Right < _Left ? _Right : _Left)
+	_NODISCARD constexpr const _Ty& (min)(const _Ty& _Left, const _Ty& _Right)
+	_NOEXCEPT_COND(_NOEXCEPT_OPER(_Right < _Left));
+$end$
+//move this line to .cpp file. Put it before all custom header files.
+#include<algorithm>
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
