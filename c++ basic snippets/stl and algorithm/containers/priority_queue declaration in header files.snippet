@@ -2,17 +2,13 @@
 <CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>map declaration in header files.</Title>
-      <Shortcut>map~in~header~files</Shortcut>
+      <Title>priority_queue declaration in header files.</Title>
+      <Shortcut>priority~queue~in~header~files</Shortcut>
       <Description>Automatically adds all the "prefix declaration" stuff for you.</Description>
       <Author>YagaoDirac</Author>
     </Header>
     <Snippet>
       <!--<Declarations>
-        <Literal>
-          <ID>my type</ID>
-          <Default>T</Default>
-        </Literal>
         <Literal>
           <ID>class name</ID>
           <Default>myclass</Default>
@@ -21,14 +17,16 @@
       <Code Language="cpp">
         <![CDATA[template<class _Ty>
 class std::allocator;
-template<class _Kty,
-	class _Ty,
-	class _Pr = std::less<_Kty>,
-	class _Alloc = std::allocator<std::pair<const _Kty, _Ty> > >
-class map;
+template<class _Ty,
+	class _Alloc = std::allocator<_Ty>>
+	class std::vector;
+template<class _Ty,
+	class _Container = std::vector<_Ty>,
+	class _Pr = std::less<typename _Container::value_type> >
+	class priority_queue;
 $end$
 //move this line to .cpp file. Put it before custom header files.
-//#include<set>
+#include<queue>
 ]]></Code>
     </Snippet>
   </CodeSnippet>
