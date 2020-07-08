@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>std::min_element and std::max_element for .h</Title>
+      <Shortcut>std~min~element~max~element~for~header</Shortcut>
+      <Description>All 2 versions for this functions are all here.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <!--<Declarations>
+        <Literal>
+          <ID>function name</ID>
+          <Default>function</Default>
+        </Literal>
+      </Declarations>-->
+      <Code Language="cpp">
+        <![CDATA[template<class _FwdIt,
+	class _Pr>
+	_NODISCARD constexpr _FwdIt std::min_element(_FwdIt _First, _FwdIt _Last, _Pr _Pred);
+template<class _FwdIt>
+_NODISCARD constexpr _FwdIt std::min_element(_FwdIt _First, _FwdIt _Last);
+template<class _FwdIt,
+	class _Pr>
+	_NODISCARD constexpr _FwdIt std::max_element(_FwdIt _First, _FwdIt _Last, _Pr _Pred);
+template<class _FwdIt>
+_NODISCARD constexpr _FwdIt std::max_element(_FwdIt _First, _FwdIt _Last);
+$end$
+//move this line to .cpp file. Put it before custom header files.
+#include<algorithm>
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

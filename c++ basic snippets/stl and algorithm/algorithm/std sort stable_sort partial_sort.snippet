@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>std::sort std::stable_sort and std::partial_sort for .h</Title>
+      <Shortcut>std~sort~for~header</Shortcut>
+      <Description>3 sortations.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <!--<Declarations>
+        <Literal>
+          <ID>function name</ID>
+          <Default>function</Default>
+        </Literal>
+      </Declarations>-->
+      <Code Language="cpp">
+        <![CDATA[template<class _RanIt,
+	class _Pr> inline
+void std::sort(const _RanIt _First, const _RanIt _Last, _Pr _Pred);
+template<class _RanIt> inline
+void std::sort(const _RanIt _First, const _RanIt _Last);
+template<class _BidIt,
+	class _Pr> inline
+void std::stable_sort(_BidIt _First, _BidIt _Last, _Pr _Pred);
+template<class _BidIt> inline
+void std::stable_sort(_BidIt _First, _BidIt _Last);
+template<class _RanIt,
+	class _Pr> inline
+void std::partial_sort(_RanIt _First, _RanIt _Mid, _RanIt _Last, _Pr _Pred);
+template<class _RanIt> inline
+void std::partial_sort(_RanIt _First, _RanIt _Mid, _RanIt _Last);
+$end$
+//move this line to .cpp file. Put it before custom header files.
+#include<algorithm>
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
