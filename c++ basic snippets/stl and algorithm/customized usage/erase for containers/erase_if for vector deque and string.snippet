@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>erase for vector deque and string with condition function.</Title>
+      <Shortcut>erase~remove~if~usage</Shortcut>
+      <Description>"container.erase(std::remove_if(" way of remove elements for vector deque and string. According to the book Effective STL clause 9.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>container name</ID>
+          <Default>coll</Default>
+        </Literal>
+        <Literal>
+          <ID>condition function name</ID>
+          <Default>remove_condition</Default>
+        </Literal>
+        <Literal>
+          <ID>element type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>parameter name</ID>
+          <Default>input</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[$container name$.erase(std::remove_if($container name$.begin(), $container name$.end(), $condition function name$), $container name$.end());//only for sequencial containers, vector deque and string.
+	$end$
+  //move the following lines out.
+	bool $condition function name$($element type$);
+	bool $condition function name$($element type$ $parameter name$)
+	{
+		//return 123 == input;
+	}
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

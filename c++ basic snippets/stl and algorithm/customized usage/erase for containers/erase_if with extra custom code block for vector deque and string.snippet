@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>erase_if with extra custom code block for vector deque and string.</Title>
+      <Shortcut>erase~if~with~custom~code~for~vector~deque~string~usage</Shortcut>
+      <Description>According to the book Effective STL clause 9.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>container name</ID>
+          <Default>coll</Default>
+        </Literal>
+        <Literal>
+          <ID>container type</ID>
+          <Default>vector</Default>
+        </Literal>
+        <Literal>
+          <ID>local iter name</ID>
+          <Default>i</Default>
+        </Literal>
+        <Literal>
+          <ID>condition function name</ID>
+          <Default>remove_condition</Default>
+        </Literal>
+        <Literal>
+          <ID>element type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>parameter name</ID>
+          <Default>input</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[for ($container type$<$element type$>::iterator $local iter name$ = $container name$.begin(); $local iter name$ != $container name$.end();/*nothing here*/)
+	{
+		//this approach works with sequencial containers, vector, deque and string.
+		if ($condition function name$(*$local iter name$))
+    {
+      $local iter name$ = $container name$.erase($local iter name$);
+    }
+		else ++$local iter name$;//prefix ++ for performence consideration
+	}
+  $end$
+  //move the following lines out.
+	bool $condition function name$($element type$);
+	bool $condition function name$($element type$ $parameter name$)
+	{
+		//return 123 == input;
+	}
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
