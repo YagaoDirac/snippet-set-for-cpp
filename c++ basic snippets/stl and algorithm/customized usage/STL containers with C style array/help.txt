@@ -1,0 +1,20 @@
+（写在开头，这个地方说的stl容器，也包括一些非stl容器，具体情况具体分析，只是stl容器因为要符合stl的规范，所以通常是肯定没有问题的，但是一些不那么符合标准的容器，就存在出问题的可能。）
+
+这个事情是这样的。
+还是Scott Meyers大神的书，Effective STL里面，讲的。细节去看书。
+反正就是C风格的数组，包括stack和heap里面的，都是类似的，他们要和stl容器互相给东西，比如从c数组创建等效的stl容器，一定是：
+c array >>> vector >>> any other containers(include std::string).
+或者
+c string >>> std::string(这个是利用std::string的构造函数，应该都知道的）
+利用的特性是，vector里面的内存是和c风格的array一样的，连续的，从一个固定的位置开始。不过这个里面限制还是不少的，书里面大段大段的讲得有。
+
+还有一个情况，是用一个c风格的函数去产生一个数组的内容，给到stl容器。当然可以先生成一个c风格的数字作为buffer，然后给到vector，再给到别的容器。但是有一个办法是可以跳过这个c风格数组的buffer的，就是书里面提到的，直接用一个vector当buffer，把vector的0号元素的地址给进函数。但是这个地方一定要保证vector已经合法的拥有了足够多的经过构造的对象。这个流程大概可以描述为：
+size_t(返回实际填充的元素个数) function(const c style poiter 开始位置,size_t 元素个数);
+先准备好vector(名字叫coll)，然后
+coll.resize(function(&coll[0],coll.size()));
+暗含的意思就是，这个vector至少要有事先构造足够多的对象，function能操作的对象个数不应该超过这个coll.size()
+
+其他的c风格的函数（接受一个指针和数组长度的，而不是接受一个容器的），也可以用这样的方式接受来自任何的容器数据。当然，这个地方就牵扯到非常多的复制。尽量少用。
+
+
+

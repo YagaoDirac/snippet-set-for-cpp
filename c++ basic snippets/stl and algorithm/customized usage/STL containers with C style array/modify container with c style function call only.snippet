@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>modification for container with c style function.</Title>
+      <Shortcut>vector~modified~with~c~function~call</Shortcut>
+      <Description>According to the book Effective STL clause 16.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>fill function name</ID>
+          <Default>fill_vector</Default>
+        </Literal>
+        <Literal>
+          <ID>element type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>vector name</ID>
+          <Default>coll</Default>
+        </Literal>
+        <Literal>
+          <ID>vector size param</ID>
+          <Default>vector_size</Default>
+        </Literal>
+        <Literal>
+          <ID>vector size variable</ID>
+          <Default>vector_size</Default>
+        </Literal>
+        <Literal>
+          <ID>destination container type</ID>
+          <Default>any container here</Default>
+        </Literal>
+        <Literal>
+          <ID>destination container name</ID>
+          <Default>destination_coll</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[std::vector<$element type$> $vector name$($vector size variable$);
+$vector name$.resize($fill function name$(&$vector name$[0], $vector size variable$));
+//std::$destination container type$<$element type$> $destination container name$($vector name$.begin(), $vector name$.end());
+$end$
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

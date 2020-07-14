@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>the whole set for calling a c style function with vector.</Title>
+      <Shortcut>vector~for~c~function~whole~set</Shortcut>
+      <Description>According to the book Effective STL clause 16.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>function return type</ID>
+          <Default>void</Default>
+        </Literal>
+        <Literal>
+          <ID>function name</ID>
+          <Default>func</Default>
+        </Literal>
+        <Literal>
+          <ID>element type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>vector name</ID>
+          <Default>coll</Default>
+        </Literal>
+        <Literal>
+          <ID>vector size param</ID>
+          <Default>vector_size</Default>
+        </Literal>
+        <Literal>
+          <ID>capture return value</ID>
+          <Default>auto result = </Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[//to .h file.
+//returns the count of actually filled elements.
+$function return type$ $function name$(const $element type$* p, size_t $vector size param$);
+
+//to .cpp file.
+$function return type$ $function name$(const $element type$* p, size_t $vector size param$)
+{
+	//Don't modify more than "size_t vector_size" inside. Or undefined happens.
+	return/* ??? */;
+}
+$end$
+//to call the function.
+if (!$vector name$.empty())
+{
+	$capture return value$ $function name$(&$vector name$[0], $vector name$.size());
+}
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
