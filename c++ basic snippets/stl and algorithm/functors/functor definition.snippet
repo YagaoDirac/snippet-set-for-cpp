@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>functor definition.</Title>
+      <Shortcut>functor~definition</Shortcut>
+      <Description>Another way to do this is like, finding std::set's definition, then definition of std::less, pasting and modifying it.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>functor name</ID>
+          <Default>myclass</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[template<class _Ty/*, class _Ty2*/>
+class $functor name$
+{
+public:
+	$functor name$($end$/*data to capture*/)/*: member(param), member2(param2)*/ {/**/}
+
+	constexpr bool operator()(const _Ty& _Left, const _Ty/*or _Ty2*/& _Right) const
+	{	
+		return (_Left < _Right);
+	}
+
+	//get functions here. Or simply move the data member definitions out of private scope. But personally don't recommend data members as reference.
+
+private:
+	// Default assignment operator to silence warning C4512.
+	//https://docs.microsoft.com/en-us/cpp/cpp/lambda-expression-syntax?redirectedfrom=MSDN&view=vs-2019#example-1-using-a-lambda
+	$functor name$& operator=(const $functor name$&);
+
+	//data members here
+};
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
