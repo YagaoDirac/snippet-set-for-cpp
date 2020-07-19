@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>functor dereference less in web doc page style.</Title>
+      <Shortcut>functor~dereference~less~ms~doc~web~style</Shortcut>
+      <Description>
+        according to https://docs.microsoft.com/en-us/cpp/cpp/lambda-expression-syntax?redirectedfrom=MSDN/*replace this part with shift 7*/view=vs-2019#example-1-using-a-lambda
+        .</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>functor name</ID>
+          <Default>dereference_less</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[template<class _Ty>
+class $functor name$
+{
+public:
+	$functor name$(){}
+
+	constexpr bool operator()(const _Ty& _Left, const _Ty& _Right) const
+	{
+		return (*_Left < *_Right);
+	}
+private:
+	// Default assignment operator to silence warning C4512.
+	//https://docs.microsoft.com/en-us/cpp/cpp/lambda-expression-syntax?redirectedfrom=MSDN&view=vs-2019#example-1-using-a-lambda
+	$functor name$& operator=(const $functor name$&);//Undefined. May cause iuuse.
+};
+$end$
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

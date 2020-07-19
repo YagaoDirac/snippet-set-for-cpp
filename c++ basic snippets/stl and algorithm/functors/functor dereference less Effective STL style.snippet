@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>functor dereference less in Effective STL style.</Title>
+      <Shortcut>functor~dereference~Effective~STL~style</Shortcut>
+      <Description>according to Effective STL written by Scott Meyers.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>functor name</ID>
+          <Default>DereferenceLess</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[
+struct $functor name$
+{	
+  template<typename PtrType>
+	bool operator()(PtrType pT1, PtrType pT2) const
+	{	
+		return *_Left < *_Right;
+	}
+};
+$end$
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

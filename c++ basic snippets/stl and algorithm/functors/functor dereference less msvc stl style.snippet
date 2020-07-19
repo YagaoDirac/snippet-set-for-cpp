@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>functor dereference less in MSVC stl style.</Title>
+      <Shortcut>functor~dereference~less~msvc~style</Shortcut>
+      <Description>according to std less in msvc2017.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>functor name</ID>
+          <Default>dereference_less</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[template<class _Ty = void>
+struct $functor name$
+{	// functor for operator< of pointers
+	constexpr bool operator()(const _Ty& _Left, const _Ty& _Right) const
+	{	// apply operator< to operands
+		return (*_Left < *_Right);
+	}
+};
+$end$
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
