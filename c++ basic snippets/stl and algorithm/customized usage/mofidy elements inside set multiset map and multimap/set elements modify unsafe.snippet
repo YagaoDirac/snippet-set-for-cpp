@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets  xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>modify the elements inside a set via iterator in an unsafe way, which may cause protability issue.</Title>
+      <Shortcut>element~modify~unsafe</Shortcut>
+      <Description>According to the book Effective STL clause 22.</Description>
+      <Author>YagaoDirac</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>container type</ID>
+          <Default>set</Default>
+        </Literal>
+        <Literal>
+          <ID>element type</ID>
+          <Default>int</Default>
+        </Literal>
+        <Literal>
+          <ID>iterator name</ID>
+          <Default>iter</Default>
+        </Literal>
+        <Literal>
+          <ID>container name</ID>
+          <Default>coll</Default>
+        </Literal>
+        <Literal>
+          <ID>value to find</ID>
+          <Default>123</Default>
+        </Literal>
+        <Literal>
+          <ID>set element function name</ID>
+          <Default>set_x</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="cpp">
+        <![CDATA[std::$container type$<$element type$>::iterator $iterator name$ = $container name$.find($value to find$);
+	if ($iterator name$ != $container name$.end())
+	{
+		const_cast<$element type$&>(*$iterator name$).$set element function name$($end$);
+	}
+]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
