@@ -25,20 +25,20 @@
       </Declarations>
       <Code Language="cpp">
         <![CDATA[$class name$();
-      $class name$(const $class name$&);
-      $class name$($class name$&&);
-      $class name$$return reference or normal value$ operator=(const $class name$&);
-      $class name$$return reference or normal value$ operator=($class name$&&);
+      $class name$(const $class name$& src);
+      $class name$($class name$&& src);
+      $class name$$return reference or normal value$ operator=(const $class name$& rhs);
+      $class name$$return reference or normal value$ operator=($class name$&& rhs);
       virtual ~$class name$();
       
       $end$
       //move this part to .cpp file.
       //for const member, init them as typename::typename():const member name1{init code}const member name2{init code}{function body here}
       $class name$::$class name$(){};
-      $class name$::$class name$(const $class name$&){};
-      $class name$::$class name$($class name$&&){};
-      $class name$$return reference or normal value$ $class name$::operator=(const $class name$&){return *this;};
-      $class name$$return reference or normal value$ $class name$::operator=($class name$&&){return *this;};
+      $class name$::$class name$(const $class name$& src){};
+      $class name$::$class name$($class name$&& src){};
+      $class name$$return reference or normal value$ $class name$::operator=(const $class name$&  rhs){return *this;};
+      $class name$$return reference or normal value$ $class name$::operator=($class name$&&  rhs){return *this;};
       $class name$::~$class name$(){};//not very sure whether this one has to be virtual.
       
       
